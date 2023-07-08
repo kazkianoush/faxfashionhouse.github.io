@@ -165,6 +165,7 @@ body {
   }
 
 
+
   .images {
     display: flex;
     justify-content: center;
@@ -185,6 +186,16 @@ body {
 
 }
 
+@media(min-width:821px) {
+  .big-img{
+    padding-left: 20%;
+  }
+
+  .images{
+    margin-left: 27%;
+  }
+}
+
 .flex-box{
   padding-top: 100px;
   display: flex;
@@ -202,8 +213,9 @@ body {
 .images{
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 30%;
   margin-top: 15px;
+  
 }
 .small-img{
   width: 60px;
