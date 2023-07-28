@@ -18,6 +18,10 @@ products.forEach(function(product) {
   var card = document.createElement("div");
   card.className = "card";
 
+  card.addEventListener("click", function() {
+    transition("products/" + filename);
+  });
+
   var img = document.createElement("div");
   img.className = "img";
   img.innerHTML = "<img src='" + product.imgSrc + "' alt=''>";
@@ -94,7 +98,10 @@ function transition(address) {
 
 
 
+
+
+
+
+
+
   
-
-
-
