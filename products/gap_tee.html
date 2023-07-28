@@ -65,10 +65,10 @@
             <div class="price">$40</div>
             <div class="size">
                 <p>Size :</p>
-                <div class="psize active">M</div>
+                <div class="psize">S</div>
+                <div class="psize">M</div>
                 <div class="psize">L</div>
                 <div class="psize">XL</div>
-                <div class="psize">XXL</div>
             </div>
             <div class="quantity">
                 <p>Quantity :</p>
@@ -76,17 +76,30 @@
             </div>
             <div class="btn-box">
                 <button class="cart-btn">Add to Cart</button>
-                <button class="buy-btn">Buy Now</button>
+                <button class="buy-btn" ><a href="https://buy.stripe.com/9AQ9CLd9d8TbbEk144">Buy Now</a></button>
             </div>
         </div>
     </div>
 
 
+
+    
     <script>
         let bigImg = document.querySelector('.big-img img');
         function showImg(pic){
             bigImg.src = pic;
         }
+
+
+        const sizes = document.querySelectorAll('.psize');
+
+sizes.forEach((size) => {
+  size.addEventListener('click', function () {
+    sizes.forEach((s) => s.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+  
     </script>
     </section>
 
