@@ -235,6 +235,8 @@ body::-webkit-scrollbar-thumb {
 }
 .big-img img{
   width: 500px;
+  border-radius: 30px; /* Change the radius (10px) to your desired value */
+
 }
 .images{
   display: flex;
@@ -247,6 +249,8 @@ body::-webkit-scrollbar-thumb {
   width: 60px;
   overflow: hidden;
   border: 1.5px solid black;
+  border-radius: 10px; /* Change the radius (10px) to your desired value */
+
 }
 .small-img img{
   width: inherit;
