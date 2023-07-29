@@ -81,6 +81,32 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  overflow-y: scroll;
+}
+
+.buy-btn a{
+  color: white;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+.buy-btn a:hover{
+  color: black;
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0em; /* Adjust the width as needed */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the track color to transparent */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the thumb color to transparent */
 }
 
 .content{
@@ -263,17 +289,28 @@ body {
 .psize{
   width: 60px;
   height: 30px;
-  border: 1px solid #ff5e00;
+  border: 1px solid white;
   color: white;
   text-align: center;
   margin: 0 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .psize.active{
   border-width: 1.5px;
-  color: #ff5e00;
+  color: black;
+  background-color: white;
   font-weight: 500;
 }
+
+.psize:hover{
+  border-width: 1.5px;
+  color: black;
+  background-color: white;
+  font-weight: 500;
+  transform: scale(1.2);
+}
+
 .quantity{
   display: flex;
 }
@@ -303,16 +340,22 @@ body {
   color: white;
 }
 .cart-btn{
-  background-color: #ff5e00;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   margin-right: 20px;
+  border-color: white;
+  border-width: 2px; /* Optionally, you can specify the border width */
+  border-style: solid; /* Optionally, you can specify the border style */
 }
 .buy-btn{
-  background-color: #00aeff;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .cart-btn:hover{
-  background-color: #ff3c00;
+  background-color: white;
+  color: black;
 }
 .buy-btn:hover{
-  background-color: #0066ff;
+  background-color: white;
+  color: black;
 }
 
