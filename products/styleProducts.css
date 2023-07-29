@@ -122,6 +122,9 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 820px) {
   /* Styles for screens with a maximum width of 820px */
 
+  .content{
+    height: 100%;
+  }
 
   body {
     background: url(../pictures/deer.gif);
@@ -152,7 +155,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .navbar .menu.active {
-    left: -30%;
+    left: 0%;
   }
 
   .navbar .menu li {
@@ -181,6 +184,8 @@ body::-webkit-scrollbar-thumb {
     width: 50%; /* Adjust the width of the container to make the image smaller */
     max-width: 400px; /* Set a maximum width for the image */
     margin-bottom: 15px; /* Add some spacing below the big image */
+    
+    
   }
   
   .big-img img {
@@ -188,6 +193,7 @@ body::-webkit-scrollbar-thumb {
     height: auto; /* Maintain the image's aspect ratio */
     margin-left: -65%;
     padding-left: 75%;
+
   }
 
 
@@ -196,6 +202,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+
   }
   
   .small-img {
@@ -207,6 +214,7 @@ body::-webkit-scrollbar-thumb {
     width: inherit;
     cursor: pointer;
     transition: all 0.3s ease;
+
   }
   
 
@@ -219,6 +227,14 @@ body::-webkit-scrollbar-thumb {
 
   .images{
     margin-left: 27%;
+  }
+  .big-img img{
+    border-radius: 30px; /* Change the radius (10px) to your desired value */
+
+  }
+  .small-img img{
+    border-radius: 10px; /* Change the radius (10px) to your desired value */
+
   }
 }
 
@@ -235,7 +251,6 @@ body::-webkit-scrollbar-thumb {
 }
 .big-img img{
   width: 500px;
-  border-radius: 30px; /* Change the radius (10px) to your desired value */
 
 }
 .images{
@@ -249,8 +264,6 @@ body::-webkit-scrollbar-thumb {
   width: 60px;
   overflow: hidden;
   border: 1.5px solid black;
-  border-radius: 10px; /* Change the radius (10px) to your desired value */
-
 }
 .small-img img{
   width: inherit;
