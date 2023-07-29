@@ -248,9 +248,13 @@ body::-webkit-scrollbar-thumb {
 }
 .big-img{
   width: 250px;
+  transition: opacity 0.5s ease; /* Add the transition effect on opacity */
+
 }
 .big-img img{
   width: 500px;
+  opacity: 1; /* Set initial opacity to 1 (fully visible) */
+
 
 }
 .images{
