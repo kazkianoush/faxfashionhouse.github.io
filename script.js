@@ -3,7 +3,7 @@
 function createProducts(){
 var products = [
     {
-      imgSrc: "pictures/fronttee.png",
+      imgSrc: "pictures/frontregan.jpeg",
       desc: "",
       title: "GAP TEE",
       price: "$45"
