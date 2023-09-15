@@ -233,8 +233,8 @@ body::-webkit-scrollbar-thumb {
 
   }
   .small-img img{
-    border-radius: 10px; /* Change the radius (10px) to your desired value */
-
+    border-radius: 100px; /* Change the radius (10px) to your desired value */
+    
   }
 }
 
@@ -259,13 +259,11 @@ body::-webkit-scrollbar-thumb {
 }
 .images{
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  justify-content:left;
   margin-top: 15px;
-  
 }
 .small-img{
-  width: 60px;
+  width: 80px;
   overflow: hidden;
   border: 1.5px solid black;
 }
