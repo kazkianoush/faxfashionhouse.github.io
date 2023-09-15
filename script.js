@@ -1,9 +1,13 @@
 
+var cart = [];
+let open = false;
 // products add here
 function createProducts(){
+
+
 var products = [
     {
-      imgSrc: "pictures/frontregan.jpeg",
+      imgSrc: "pictures/shirt_transparent_front.png",
       desc: "",
       title: "GAP TEE",
       price: "$45"
@@ -17,11 +21,9 @@ var products = [
 products.forEach(function(product) {
   var card = document.createElement("div");
   card.className = "card";
+  
 
-  card.addEventListener("click", function() {
-    transition("products/" + filename);
-  });
-
+  
   var img = document.createElement("div");
   img.className = "img";
   img.innerHTML = "<img src='" + product.imgSrc + "' alt=''>";
@@ -37,6 +39,10 @@ products.forEach(function(product) {
   var box = document.createElement("div");
   box.className = "box";
 
+  var addCartBtn = document.createElement("button");
+  addCartBtn.className = "btn";
+  addCartBtn.textContent = "Cart + ";
+
   var price = document.createElement("div");
   price.className = "price";
   price.textContent = product.price;
@@ -45,6 +51,8 @@ products.forEach(function(product) {
   buyNowBtn.className = "btn";
   buyNowBtn.textContent = "Buy Now";
 
+ 
+
   var filename = product.title.toLowerCase().replace(/\s/g, "_") + ".html";
   console.log(filename);
 
@@ -52,12 +60,35 @@ products.forEach(function(product) {
     transition("products/" + filename);
   });
 
+  card.addEventListener("click", function() {
+    transition("products/" + filename);
+  });
+
+  addCartBtn.addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevent the click event from propagating to the card
+    // Add the clicked product to the cart array
+    cart.push({
+      picture: product.imgSrc,
+      title: product.title,
+      price: product.price
+    });
+    for(let i =0; i < cart.length; i++) {
+      console.log(cart[i]);
+    }
+    updateCartDisplay();
+  });
+
+  
+
 
 
   // Assuming you're running this JavaScript in the browser, you can redirect using:
 
+  box.append(addCartBtn);
   box.appendChild(price);
+ 
   box.appendChild(buyNowBtn);
+  
 
   card.appendChild(img);
   card.appendChild(desc);
@@ -68,6 +99,49 @@ products.forEach(function(product) {
 });
 
 
+}
+
+function updateCartDisplay() {
+  var cartContent = document.getElementById("cart-content");
+  var cartPanel = document.getElementById("cart-panel");
+  console.log("hello");
+
+  // Clear the current content of the cart
+  cartContent.innerHTML = "";
+
+  // Loop through the cart items and add them to the cart content
+  cart.forEach(function(item) {
+    var cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+
+    var shirtImage = document.createElement("div");
+    shirtImage.className = "shirt-image";
+    shirtImage.innerHTML = '<img src="' + item.picture + '" alt="Shirt">';
+
+    var shirtDetails = document.createElement("div");
+    shirtDetails.className = "shirt-details";
+
+    var itemName = document.createElement("div");
+    itemName.className = "shirt-name";
+    itemName.textContent = item.title;
+
+    var itemPrice = document.createElement("div");
+    itemPrice.className = "shirt-price";
+    itemPrice.textContent = item.price;
+
+    
+
+    shirtDetails.appendChild(itemName);
+    shirtDetails.appendChild(itemPrice);
+    
+
+    cartItem.appendChild(shirtImage);
+    cartItem.appendChild(shirtDetails);
+
+    cartContent.appendChild(cartItem);
+
+    console.log(cartPanel);
+  });
 }
 
 
@@ -101,7 +175,27 @@ function transition(address) {
 
 
 
-
-
-
+  $(document).ready(function() {
+      $(".menu-cart").click(function() {
+        setTimeout(function() {
+          if(!open){
+            $(".cart-panel").addClass("cart-open");
+            open = true;
+          } else {
+            $(".cart-panel").removeClass("cart-open");
+            open = false;
+          }
+          
+        }, 200); // Set the delay in milliseconds (e.g., 200ms)
+      });
+    // Open the cart panel with a delay
+    
+    // Close the cart panel with a delay
+    $(".cart-close").click(function() {
+      setTimeout(function() {
+        $(".cart-panel").removeClass("cart-open");
+        open = false;
+      }, 200); // Set the delay in milliseconds (e.g., 200ms)
+    });
+  });
   
