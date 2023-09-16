@@ -10,7 +10,7 @@ var products = [
       imgSrc: "pictures/shirt_transparent_front.png",
       desc: "",
       title: "GAP TEE",
-      price: "$45"
+      price: "C$45"
     }
     // Add more product objects as needed
   ];
@@ -39,9 +39,7 @@ products.forEach(function(product) {
   var box = document.createElement("div");
   box.className = "box";
 
-  var addCartBtn = document.createElement("button");
-  addCartBtn.className = "btn";
-  addCartBtn.textContent = "Cart + ";
+  
 
   var price = document.createElement("div");
   price.className = "price";
@@ -64,19 +62,6 @@ products.forEach(function(product) {
     transition("products/" + filename);
   });
 
-  addCartBtn.addEventListener("click", function(event) {
-    event.stopPropagation(); // Prevent the click event from propagating to the card
-    // Add the clicked product to the cart array
-    cart.push({
-      picture: product.imgSrc,
-      title: product.title,
-      price: product.price
-    });
-    for(let i =0; i < cart.length; i++) {
-      console.log(cart[i]);
-    }
-    updateCartDisplay();
-  });
 
   
 
@@ -84,7 +69,6 @@ products.forEach(function(product) {
 
   // Assuming you're running this JavaScript in the browser, you can redirect using:
 
-  box.append(addCartBtn);
   box.appendChild(price);
  
   box.appendChild(buyNowBtn);
@@ -199,3 +183,18 @@ function transition(address) {
     });
   });
   
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+  const dbutton = document.getElementById("buy-btn"); // Replace with your button's actual ID
+
+ dbutton.addEventListener('click', function() {
+  const timestamp = new Date().toISOString(); // Get the current timestamp in ISO format
+  console.log('Button clicked at:', timestamp);
+
+  // If you want to display the timestamp on the page:
+  // const timestampElement = document.getElementById('timestamp-display'); // Replace with an appropriate element ID
+  // timestampElement.innerText = 'Button clicked at: ' + timestamp;
+});
+  });
